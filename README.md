@@ -51,3 +51,6 @@ localhost:3000/:id - PUT request will update the record with the specified id
 
 localhost:3000/:id - DELETE request will delete the record with the specified id
 ```
+
+# Extras
+In the `index.js` you can find another example of how to use mongoose. In this example we use name and age 
