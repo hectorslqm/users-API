@@ -16,7 +16,7 @@ app.put('/users/:id', user.update)
 app.patch('/users/:id', user.update)
 app.delete('/users/:id', user.destroy)
 
-//This indicate to the midleware that the app will use the static files in the app folder so the user can render my index.html file
+//This indicate to the midleware that the app will use the static files in the app folder so the user can render the multiple files inside app/
 app.use(express.static('app'))
 
 app.get('/', (req, res) => {

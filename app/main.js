@@ -2,19 +2,23 @@ console.log('Welcome! Feel free to use the site or tools like Postman or Thunder
 console.log('If you need help, please contact me at: hectorslqm@gmail.com')
 const loadInitialTemplate = () => {
     const template = `
-        <h1>Users</h1>
-        <form id="user-form">
-            <div>
-                <label>Name</label>
-                <input name="name"/>
-            </div>
-            <div>
-                <label>Last name</label>
-                <input name="lastname"/>
-            </div>
-            <button type="submit">Submit</button>'
-        </form>
-        <ul id="user-list"></ul>
+        <div class="bg-slate-100 shadow-lg rounded-lg p-4 max-w-sm mx-auto">
+            <h1 class='text-3xl font-bold text-blue-600 text-center'>REGISTER A NEW USER</h1>
+            <form id="user-form" class="space-y-6 p-6">
+                <div>
+                    <label class="block text-lg font-semibold text-gray-700">Name</label>
+                    <input name="name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/>
+                </div>
+                <div>
+                    <label class="block text-lg font-semibold text-gray-700">Last name</label>
+                    <input name="lastname" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/>
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit" class="text-bold bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"> Submit</button>
+                </div>
+            </form>
+            <ul id="user-list" class="mt-6 list-disc pl-5 text-gray-700"></ul>
+        </div>
     `
     // This will replace the body of the html with the template above
     //since getElementsBytTagName returns an array we need to get the first element
@@ -43,8 +47,13 @@ const getUsers = async () => {
     const users = await response.json()
     //console.log(users)
     const template = user => `
-        <li>
-            ${user.name} ${user.lastname} <button data-id="${user._id}">Delete</button>
+        <li class="flex justify-between items-center p-4 mb-4 bg-white rounded-lg shadow-md hover:shadow-lg">
+            <span class="text-lg font-semibold text-gray-800">
+                ${user.name} ${user.lastname}
+            </span>
+            <button data-id="${user._id}" class="bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+                Delete
+            </button>
         </li>
     `
     
