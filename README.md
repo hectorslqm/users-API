@@ -1,18 +1,18 @@
 # Hi there 👋
 This API is a simple CRUD API built using Node.js and Express.js. The API is used to perform CRUD operations on a MongoDB database.
 The API endpoints are as follows:
-- GET /
-- GET /:id
-- POST /
-- PUT /:id
-- DELETE /:id
+- GET /users
+- GET /users/:id
+- POST /users
+- PUT /users/:id
+- DELETE /users/:id
 
 # Database Schema
 The database schema is as follows:
     - name: String, Mandatory, minimum length 3
     - lastName: String, Mandatory, minimum length 3
 
-# How to execute
+# How to start the project 
 1. Clone the repository
 2. Run the following command in the terminal
 ```bash
@@ -25,31 +25,31 @@ The database schema is as follows:
     PORT=3000
     MONGO_URI=your_connection_string
 ```
-4. You can use [Postman](https://www.postman.com/) to test the API endpoints.
-6. The API endpoints are used to perform CRUD operations on the database.
+4. You can use [Postman](https://www.postman.com/) to test the API endpoints or by navigating to [localhost:3000](http://localhost:3000/) in my customized interface
+> The API endpoints are used to perform CRUD operations on the database.
 
-# Postman Collection
+## Postman Collection
 ```bash 
 
-localhost:3000/ - GET request will return all the records in the database
+localhost:3000/users - GET request will return all the records in the database
 
-localhost:3000/:id - GET request will return the record with the specified id
+localhost:3000/users/:id - GET request will return the record with the specified id
 
-localhost:3000/ - POST request will add a new record to the database
+localhost:3000/users - POST request will add a new record to the database
 // Request body should be in JSON format
 {
     "name": "John",
     "lastName": "Doe"
 }
 
-localhost:3000/:id - PUT request will update the record with the specified id
+localhost:3000/users/:id - PUT request will update the record with the specified id
 // Request body should be in JSON format
 {
     "name": "Jane",
     "lastName": "Doe"
 }
 
-localhost:3000/:id - DELETE request will delete the record with the specified id
+localhost:3000/users/:id - DELETE request will delete the record with the specified id
 ```
 
 # Extras
