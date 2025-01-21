@@ -1,23 +1,31 @@
 console.log('Welcome! Feel free to use the site or tools like Postman or Thunder Client to interact with the API.')
 console.log('If you need help, please contact me at: hectorslqm@gmail.com')
+
 const loadInitialTemplate = () => {
     const template = `
-        <div class="bg-slate-100 shadow-lg rounded-lg p-4 max-w-sm mx-auto">
-            <h1 class='text-3xl font-bold text-blue-600 text-center'>REGISTER A NEW USER</h1>
-            <form id="user-form" class="space-y-6 p-6">
-                <div>
-                    <label class="block text-lg font-semibold text-gray-700">Name</label>
-                    <input name="name" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/>
+        <h1 class="text-3xl tracking-widest font-bold text-slate-900 text-center">Users API</h1>
+        <div class="flex flex-row min-w-full">
+            <div class=" bg-slate-200 shadow-lg rounded-bl-lg rounded-tl-lg max-w-sm p-2">
+                <div class="w-full">
+                    <h1 class='text-2xl font-bold text-slate-800 text-center'>REGISTER A NEW USER</h1>
+                    <form id="user-form" class="space-y-4 pt-4 p-6">
+                        <div>
+                            <label class="block text-xl font-semibold text-gray-700">Name</label>
+                            <input name="name" class="text-lg w-full p-1 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-sky-300 focus:border-sky-300"/>
+                        </div>
+                        <div>
+                            <label class="block text-xl font-semibold text-gray-700">Last name</label>
+                            <input name="lastname" class="text-lg w-full p-1 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-sky-300 focus:border-sky-300"/>
+                        </div>
+                        <div class="flex justify-center">
+                            <button type="submit" class="text-xl text-bold bg-sky-900 text-white py-2 px-6 rounded-lg hover:bg-sky-300 focus:ring-2 focus:ring-sky-300 border-0"> Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <div>
-                    <label class="block text-lg font-semibold text-gray-700">Last name</label>
-                    <input name="lastname" class="w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500"/>
-                </div>
-                <div class="flex justify-center">
-                    <button type="submit" class="text-bold bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"> Submit</button>
-                </div>
-            </form>
-            <ul id="user-list" class="mt-6 list-disc pl-5 text-gray-700"></ul>
+            </div>
+            <div class="ml-2 flex-grow bg-slate-200 shadow-lg rounded-tr-lg rounded-br-lg p-2">
+                <ul id="user-list" class="mt-6 list-disc pl-2 pr-2 text-slate-900"></ul>
+            </div>
         </div>
     `
     // This will replace the body of the html with the template above
@@ -48,10 +56,10 @@ const getUsers = async () => {
     //console.log(users)
     const template = user => `
         <li class="flex justify-between items-center p-4 mb-4 bg-white rounded-lg shadow-md hover:shadow-lg">
-            <span class="text-lg font-semibold text-gray-800">
+            <span class="text-xl font-semibold text-gray-800">
                 ${user.name} ${user.lastname}
             </span>
-            <button data-id="${user._id}" class="bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <button data-id="${user._id}" class="border-0 text-lg bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500">
                 Delete
             </button>
         </li>

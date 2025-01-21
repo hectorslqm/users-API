@@ -17,7 +17,7 @@ The database schema is as follows:
 2. Run the following command in the terminal
 ```bash
     npm install
-    node api.js
+    npm run start
 ```
 3. To run locally you will require a mongoDB database. You can create a free account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and create a cluster. You will get a connection string which you can use to connect to the database. Replace the connection string in the api.js file with your connection string.
 4. You will require a .env file with the following variables:

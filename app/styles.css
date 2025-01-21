@@ -5,7 +5,8 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.5;
-    background-color: slategray;
+    background-color: lightgray;
+    padding: 1rem;
   }
   
 h1 {
