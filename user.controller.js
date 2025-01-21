@@ -11,15 +11,23 @@ const User = {
     },
     create: async (req, res) => {
         const user = new Users(req.body)
-        const savedUser = await user.save()
-        res.status(201).send(savedUser._id)
+        try {
+            const savedUser = await user.save()
+            res.status(201).send(savedUser._id)
+        } catch (err) {
+            res.status(400).send({error: 'Error while creating the user.', details: err.message})
+        }
     },
     update: async (req, res) => {
-        const { id } = req.params
-        const user = await Users.findOne({ _id: id })
-        Object.assign(user, req.body)
-        await user.save()
-        res.sendStatus(204)
+        try{
+            const { id } = req.params
+            const user = await Users.findOne({ _id: id })
+            Object.assign(user, req.body)
+            await user.save()
+            res.sendStatus(204)
+        } catch (err) {
+            res.status(400).send({error: 'Error while updating the user.', details: err.message})
+        }
     },
     destroy: async (req, res) => {
         const { id } = req.params
